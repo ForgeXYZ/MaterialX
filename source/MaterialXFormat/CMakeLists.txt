@@ -28,8 +28,8 @@ target_link_libraries(
 )
 
 install(TARGETS MaterialXFormat
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/
+        DESTINATION ${BLENDER_VERSION}/lib/MaterialX/
 )
 
 install(FILES ${materialx_headers}
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/include/MaterialXFormat/)
+        DESTINATION ${BLENDER_VERSION}/lib/MaterialX/include/MaterialXFormat/)

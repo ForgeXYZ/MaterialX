@@ -11,8 +11,8 @@ set(CMAKE_MACOSX_RPATH ON)
 include(CheckCXXCompilerFlag)
 enable_testing()
 
-option(MATERIALX_BUILD_PYTHON "Build the MaterialX Python package from C++ bindings. Requires Python 2.6 or greater." OFF)
-option(MATERIALX_BUILD_DOCS "Create HTML documentation using Doxygen. Requires that Doxygen be installed." OFF)
+option(MATERIALX_BUILD_PYTHON "Build the MaterialX Python package from C++ bindings. Requires Python 2.6 or greater." ON)
+option(MATERIALX_BUILD_DOCS "Create HTML documentation using Doxygen. Requires that Doxygen be installed." ON)
 option(MATERIALX_INSTALL_PYTHON "Install the MaterialX Python package as a third-party library when the install target is built." ON)
 option(MATERIALX_WARNINGS_AS_ERRORS "Interpret all compiler warnings as errors." OFF)
 
@@ -36,10 +36,10 @@ mark_as_advanced(MATERIALX_WARNINGS_AS_ERRORS)
 set(PYBIND11_PYTHON_VERSION ${MATERIALX_PYTHON_VERSION})
 set(PYTHON_EXECUTABLE ${MATERIALX_PYTHON_EXECUTABLE})
 
-# Adjust the default installation path
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/installed" CACHE PATH "Default install path" FORCE)
-endif()
+# # Adjust the default installation path
+# if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+#     set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/installed" CACHE PATH "Default install path" FORCE)
+# endif()
 
 # Adjust compiler settings
 if(MSVC)

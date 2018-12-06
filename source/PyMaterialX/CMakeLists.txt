@@ -43,4 +43,4 @@ target_link_libraries(
     PRIVATE ${CMAKE_DL_LIBS})
 
 install(TARGETS PyMaterialX
-        DESTINATION "${CMAKE_INSTALL_PREFIX}/python/MaterialX")
+        DESTINATION "${BLENDER_VERSION}/python/lib/python3.7/site-packages/MaterialX")

@@ -26,8 +26,8 @@ target_link_libraries(
 )
 
 install(TARGETS MaterialXCore
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/
+        DESTINATION ${BLENDER_VERSION}/lib/MaterialX/
 )
 
 install(FILES ${materialx_headers}
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/include/MaterialXCore/)
+        DESTINATION ${BLENDER_VERSION}/lib/MaterialX/include/MaterialXCore/)

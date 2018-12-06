@@ -16,11 +16,11 @@ add_test(NAME MaterialXTest
 
 add_custom_command(TARGET MaterialXTest POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
-                   ${CMAKE_SOURCE_DIR}/documents/Libraries ${CMAKE_CURRENT_BINARY_DIR}/documents/Libraries)
+                   ${CMAKE_CURRENT_SOURCE_DIR}/../../documents/Libraries ${CMAKE_CURRENT_BINARY_DIR}/Libraries)
 
 add_custom_command(TARGET MaterialXTest POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
-                   ${CMAKE_SOURCE_DIR}/documents/Examples ${CMAKE_CURRENT_BINARY_DIR}/documents/Examples)
+                   ${CMAKE_CURRENT_SOURCE_DIR}/../../documents/Examples ${CMAKE_CURRENT_BINARY_DIR}/Examples)
                    
 set_target_properties(
     MaterialXTest PROPERTIES
@@ -34,4 +34,8 @@ target_link_libraries(
     MaterialXTest
     MaterialXFormat
     ${CMAKE_DL_LIBS}
+)
+
+install(TARGETS MaterialXTest
+        DESTINATION ${BLENDER_VERSION}/lib/MaterialX/test/MaterialXTest
 )
