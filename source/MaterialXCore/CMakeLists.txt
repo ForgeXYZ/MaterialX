@@ -24,10 +24,10 @@ target_link_libraries(
     ${CMAKE_DL_LIBS})
 
 install(TARGETS MaterialXCore
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/)
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/MaterialX/lib/)
 
 install(FILES ${materialx_headers}
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/include/MaterialXCore/)
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/MaterialX/include/MaterialXCore/)
 
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/MaterialXCore.pdb"
-    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/" OPTIONAL)
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/MaterialX/lib/" OPTIONAL)

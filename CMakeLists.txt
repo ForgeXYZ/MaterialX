@@ -143,4 +143,4 @@ endif()
 
 # Install MaterialX find_package module
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
-    DESTINATION "${CMAKE_INSTALL_PREFIX}" MESSAGE_NEVER)
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/MaterialX" MESSAGE_NEVER)

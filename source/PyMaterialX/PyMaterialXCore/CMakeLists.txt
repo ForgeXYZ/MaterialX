@@ -22,4 +22,4 @@ target_link_libraries(
     PRIVATE ${CMAKE_DL_LIBS})
 
 install(TARGETS PyMaterialXCore
-        DESTINATION "${CMAKE_INSTALL_PREFIX}/python/MaterialX")
+        DESTINATION "${CMAKE_INSTALL_PREFIX}/MaterialX/python/MaterialX")

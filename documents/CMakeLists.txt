@@ -1,17 +1,17 @@
 set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
 set(DOXYGEN_HTML_OUTPUT_DIR ${DOXYGEN_OUTPUT_DIR}/MaterialXDocs)
-set(DOXYGEN_INPUT_LIST ${CMAKE_SOURCE_DIR}/documents/DeveloperGuide
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXCore
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXFormat
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXGenShader
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXGenShader/Nodes
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXGenGlsl
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXGenGlsl/Nodes
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXGenOsl
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXRender
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXRenderHw
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXRenderGlsl
-                       ${CMAKE_SOURCE_DIR}/source/MaterialXRenderOsl
+set(DOXYGEN_INPUT_LIST ${PROJECT_SOURCE_DIR}/documents/DeveloperGuide
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXCore
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXFormat
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXGenShader
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXGenShader/Nodes
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXGenGlsl
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXGenGlsl/Nodes
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXGenOsl
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXRender
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXRenderHw
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXRenderGlsl
+                       ${PROJECT_SOURCE_DIR}/source/MaterialXRenderOsl
                        )
 string (REPLACE ";" " " DOXYGEN_INPUT_STR "${DOXYGEN_INPUT_LIST}")
 
@@ -24,7 +24,7 @@ if(DOXYGEN_FOUND)
                       COMMENT "Generating HTML documentation: ${DOXYGEN_HTML_OUTPUT_DIR}/index.html")
     add_custom_command(TARGET MaterialXDocs PRE_BUILD
                        COMMAND ${CMAKE_COMMAND} -E copy_directory
-                       ${CMAKE_SOURCE_DIR}/resources/Images ${CMAKE_CURRENT_BINARY_DIR})
+                       ${PROJECT_SOURCE_DIR}/resources/Images ${CMAKE_CURRENT_BINARY_DIR})
     install(DIRECTORY ${DOXYGEN_HTML_OUTPUT_DIR}
-            DESTINATION "${CMAKE_INSTALL_PREFIX}/documents" MESSAGE_NEVER)
+            DESTINATION "${CMAKE_INSTALL_PREFIX}/MaterialX/documents" MESSAGE_NEVER)
 endif(DOXYGEN_FOUND)
